@@ -55,14 +55,18 @@ body {
     width: 100%; /* Set the image width to 100% of its container */
     height: auto; /* Maintain aspect ratio */
     position: absolute;
-    top: 0; /* Adjust the top position to control vertical alignment */
+    top: 0; /* Place the image at the top of the screen */
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Adjust for horizontal centering */
   }
-
-@media screen and (min-width: 768px) {
   
-  .matrix-image {
-    width: 150px; /* Adjust the width as needed for larger screens */
-    left: 170px; /* Adjust the left position as needed for larger screens */
-    top: 50px;
+  /* Use media queries to adjust the image for different screen sizes */
+  @media screen and (min-width: 768px) {
+    /* For screens with a minimum width of 768px (e.g., tablets and desktops) */
+    .matrix-image {
+      width: 150px; /* Adjust the width as needed for larger screens */
+      left: 170px; /* Adjust the left position as needed for larger screens */
+      top: 50px; /* Adjust the top position as needed for larger screens */
+      transform: none; /* Remove the horizontal centering on larger screens */
+    }
   }
-}
