@@ -59,3 +59,11 @@ body {
   left: 170px; /* Adjust the left position as needed */
   top: 50px; /* Adjust the top position as needed */
 }
+
+@media screen and (min-width: 768px) {
+  
+  .matrix-image {
+    width: 150px; /* Adjust the width as needed for larger screens */
+    left: 170px; /* Adjust the left position as needed for larger screens */
+  }
+}
