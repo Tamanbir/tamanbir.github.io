@@ -51,19 +51,18 @@ body {
     margin-top: 10px;
   }
   
-  /* Style for the matrix image */
-.matrix-image {
-  width: 150px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-  position: absolute;
-  left: 170px; /* Adjust the left position as needed */
-  top: 50px; /* Adjust the top position as needed */
-}
+  .matrix-image {
+    width: 100%; /* Set the image width to 100% of its container */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 0; /* Adjust the top position to control vertical alignment */
+  }
 
 @media screen and (min-width: 768px) {
   
   .matrix-image {
     width: 150px; /* Adjust the width as needed for larger screens */
     left: 170px; /* Adjust the left position as needed for larger screens */
+    top: 50px;
   }
 }
