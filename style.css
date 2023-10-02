@@ -70,3 +70,15 @@ body {
       transform: none; /* Remove the horizontal centering on larger screens */
     }
   }
+  
+  /* Add a class to control image visibility on small screens */
+  .hide-on-small-screen {
+    display: none; /* Hide the image on small screens */
+  }
+  
+  /* Use media query to show the image only on large screens */
+  @media screen and (min-width: 768px) {
+    .hide-on-small-screen {
+      display: block; /* Show the image on large screens */
+    }
+  }
