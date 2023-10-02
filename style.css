@@ -7,7 +7,7 @@ body {
     font-family: monospace;
     width: 90%;
     max-width: 800px;
-    margin: 50px auto;
+    margin: 200px auto 50px; /* Adjust margin to make space for the image */
     background-color: black;
     border: 1px solid white;
   }
@@ -55,16 +55,9 @@ body {
     width: 150px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     position: absolute;
-    left: 170px; /* Adjust the left position as needed */
-    top: 40px; /* Adjust the top position as needed */
-  }
-  
-  /* Use media query to hide the image on mobile devices */
-  @media screen and (max-width: 767px) {
-    /* For screens with a maximum width of 767px (e.g., mobile devices) */
-    .matrix-image {
-      display: none; /* Hide the image */
-    }
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image horizontally */
+    top: 10px; /* Adjust the top position to move the image above the terminal */
   }
 
   footer {
