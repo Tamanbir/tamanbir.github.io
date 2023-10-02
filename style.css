@@ -7,7 +7,7 @@ body {
     font-family: monospace;
     width: 90%;
     max-width: 800px;
-    margin: 50px auto;
+    margin: 0 auto; /* Center the terminal horizontally on all screens */
     background-color: black;
     border: 1px solid white;
   }
@@ -52,15 +52,16 @@ body {
   }
   
   .matrix-image {
-    width: 100%; /* Set the image width to 100% of its container */
+    width: 150px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
-    position: absolute;
-    top: 0; /* Place the image at the top of the screen */
-    left: 50%; /* Center the image horizontally */
-    transform: translateX(-50%); /* Adjust for horizontal centering */
   }
   
-  /* Use media queries to adjust the image for different screen sizes */
+  /* Style for the mobile image container */
+  .mobile-image {
+    text-align: center; /* Center the image horizontally */
+  }
+  
+  /* Use media query to adjust the image for different screen sizes */
   @media screen and (min-width: 768px) {
     /* For screens with a minimum width of 768px (e.g., tablets and desktops) */
     .matrix-image {
@@ -69,16 +70,9 @@ body {
       top: 50px; /* Adjust the top position as needed for larger screens */
       transform: none; /* Remove the horizontal centering on larger screens */
     }
-  }
   
-  /* Add a class to control image visibility on small screens */
-  .hide-on-small-screen {
-    display: none; /* Hide the image on small screens */
-  }
-  
-  /* Use media query to show the image only on large screens */
-  @media screen and (min-width: 768px) {
-    .hide-on-small-screen {
-      display: block; /* Show the image on large screens */
+    /* Hide the mobile image container on larger screens */
+    .mobile-image {
+      display: none;
     }
   }
