@@ -70,10 +70,12 @@ body {
     width: 100%;
   }
   
-  /* Media query for smaller screens (e.g., mobile devices) */
   @media screen and (max-width: 767px) {
-    /* Reduce the footer's padding to save space */
+    /* Footer styles for mobile screens */
     footer {
-      padding: 5px 0;
+      background-color: transparent; /* Transparent background for mobile */
+      padding: 10px 0;
+      position: relative;
+      width: 100%;
     }
   }
