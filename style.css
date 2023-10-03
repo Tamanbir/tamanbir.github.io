@@ -61,11 +61,19 @@ body {
   }
 
   footer {
-    background-color: #222;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
     color: white;
     text-align: center;
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
     padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Media query for smaller screens (e.g., mobile devices) */
+  @media screen and (max-width: 767px) {
+    /* Reduce the footer's padding to save space */
+    footer {
+      padding: 5px 0;
+    }
   }
