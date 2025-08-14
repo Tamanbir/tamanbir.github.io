@@ -1,15 +1,52 @@
 /*
   Stylesheet for the terminal‑themed resume.
 
-  This design discards traditional page elements and focuses
-  exclusively on the terminal experience. The entire page has a dark
-  patterned background reminiscent of circuit boards, while the
-  terminal window is centered with subtle shadows and custom window
-  controls. All content is rendered using monospace fonts and
-  accent colours consistent with a command‑line environment.
+  The page is dominated by a central terminal window on a dark
+  circuit‑inspired backdrop. Colours and fonts are chosen to evoke
+  a command‑line environment while maintaining readability. The
+  footer is understated and provides only essential attribution.
+
+  Colour values are defined as CSS custom properties so that
+  additional themes can override them easily. A "matrix" theme is
+  provided via the `.matrix-theme` class. When this class is
+  applied to the body, the appearance switches to a green‑on‑black
+  matrix aesthetic.
 */
 
-/* Reset and base styling */
+/* Default colour variables */
+:root {
+  /* Background image for the page */
+  --bg-img: linear-gradient(
+      rgba(10, 25, 47, 0.85),
+      rgba(10, 25, 47, 0.85)
+    ),
+    url('hero_background.png');
+  /* Terminal colours */
+  --terminal-bg: #011627;
+  --toolbar-bg: #0a192f;
+  --title-color: #c5c7ff;
+  --primary-color: #e0e0e0;
+  --prompt-color: #64ffda;
+  --command-line-color: #64ffda;
+  --info-color: #61dafb;
+  --error-color: #e06c75;
+  --footer-color: #64ffda;
+}
+
+/* Matrix theme overrides */
+.matrix-theme {
+  --bg-img: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('matrix.png');
+  --terminal-bg: #010d01;
+  --toolbar-bg: #021401;
+  --title-color: #00ff00;
+  --primary-color: #00ff00;
+  --prompt-color: #00ff00;
+  --command-line-color: #00ff00;
+  --info-color: #00cc00;
+  --error-color: #ff5555;
+  --footer-color: #00ff00;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,16 +57,11 @@ html,
 body {
   height: 100%;
   font-family: 'Courier New', Courier, monospace;
-  color: #e0e0e0;
+  color: var(--primary-color);
 }
 
-/* Full page background with a subtle circuit pattern */
 .terminal-page {
-  background: linear-gradient(
-      rgba(10, 25, 47, 0.85),
-      rgba(10, 25, 47, 0.85)
-    ),
-    url('hero_background.png') center/cover no-repeat;
+  background: var(--bg-img) center/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,21 +70,19 @@ body {
   padding: 2rem 1rem;
 }
 
-/* Terminal window container */
 .terminal-window {
   width: 100%;
   max-width: 800px;
-  background-color: #011627;
+  background-color: var(--terminal-bg);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
 
-/* Terminal toolbar with window control buttons */
 .terminal-toolbar {
   display: flex;
   align-items: center;
-  background-color: #0a192f;
+  background-color: var(--toolbar-bg);
   padding: 0.5rem 0.75rem;
 }
 
@@ -64,15 +94,15 @@ body {
   flex-shrink: 0;
 }
 
-.circle.red {
+.red {
   background-color: #ff5f56;
 }
 
-.circle.yellow {
+.yellow {
   background-color: #ffbd2e;
 }
 
-.circle.green {
+.green {
   background-color: #27c93f;
 }
 
@@ -81,11 +111,10 @@ body {
   margin-right: auto;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #c5c7ff;
+  color: var(--title-color);
   white-space: nowrap;
 }
 
-/* Terminal body styling */
 .terminal-body {
   padding: 1rem;
   height: 400px;
@@ -93,7 +122,6 @@ body {
   font-size: 1rem;
 }
 
-/* Output styling */
 .terminal-output {
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -104,20 +132,18 @@ body {
   line-height: 1.4;
 }
 
-/* Command line and output colours */
-.terminal-output .command-line {
-  color: #64ffda;
+.command-line {
+  color: var(--command-line-color);
 }
 
-.terminal-output .info {
-  color: #61dafb;
+.info {
+  color: var(--info-color);
 }
 
-.terminal-output .error {
-  color: #e06c75;
+.error {
+  color: var(--error-color);
 }
 
-/* Input line */
 .terminal-input-line {
   display: flex;
   align-items: center;
@@ -125,7 +151,7 @@ body {
 }
 
 .prompt {
-  color: #64ffda;
+  color: var(--prompt-color);
   margin-right: 0.3rem;
 }
 
@@ -143,12 +169,11 @@ body {
   color: #586069;
 }
 
-/* Footer */
 .footer {
   margin-top: 1.5rem;
   text-align: center;
   font-size: 0.75rem;
-  color: #64ffda;
+  color: var(--footer-color);
 }
 
 @media (max-width: 600px) {
