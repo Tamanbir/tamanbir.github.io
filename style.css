@@ -1,81 +1,188 @@
-body {
-    background-color: black;
-    color: white;
-  }
-  
-  .terminal {
-    font-family: monospace;
-    width: 90%;
-    max-width: 800px;
-    margin: 200px auto 50px; /* Adjust margin to make space for the image */
-    background-color: black;
-    border: 1px solid white;
-  }
-  
-  .terminal-header {
-    background-color: #222;
-    color: white;
-    padding: 5px;
-  }
-  
-  .terminal-title {
-    font-weight: bold;
-  }
-  
-  .terminal-body {
-    padding: 10px;
-  }
-  
-  .command-line {
-    display: flex;
-    align-items: center;
-  }
-  
-  .prompt {
-    color: green;
-    margin-right: 5px;
-  }
-  
-  .command-input {
-    background-color: transparent;
-    color: white;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    width: 100%;
-  }
-  .output p {
-    color: #00ff00; /* Green */
-  }
-  .output {
-    margin-top: 10px;
-  }
-  
-  .matrix-image {
-    width: 150px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    position: absolute;
-    left: 50%; /* Center the image horizontally */
-    transform: translateX(-50%); /* Center the image horizontally */
-    top: 10px; /* Adjust the top position to move the image above the terminal */
-  }
+/*
+  Custom stylesheet for Tamanbir Singh Jaj’s professional resume.
 
-  footer {
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  The design uses a modern dark‑on‑light colour palette with teal
+  accents to highlight key elements. The layout is responsive and
+  optimised for readability on both desktop and mobile screens. All
+  measurements are defined using relative units where appropriate to
+  maintain consistency across devices.
+*/
+
+/* Reset default browser margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background-color: #fdfdfd;
+}
+
+/* Header styling */
+.header {
+  background-color: #0a192f;
+  color: #ffffff;
+  padding: 2rem 1rem;
+}
+
+.header-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #64ffda;
+  margin-bottom: 1.5rem;
+}
+
+.contact {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.contact-label {
+  font-weight: 600;
+  margin-right: 0.25rem;
+  color: #64ffda;
+}
+
+.contact a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  color: #64ffda;
+}
+
+/* Container for all sections */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 3rem auto;
+}
+
+/* Section headings */
+section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #0a192f;
+  border-bottom: 3px solid #64ffda;
+  padding-bottom: 0.5rem;
+}
+
+/* Education and experience items */
+.education-item,
+.experience-item {
+  margin-bottom: 2rem;
+}
+
+.education-item h3,
+.experience-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: #0a192f;
+}
+
+.education-degree,
+.experience-meta {
+  font-style: italic;
+  color: #555555;
+  margin-bottom: 0.25rem;
+}
+
+.education-details {
+  color: #777777;
+  font-size: 0.9rem;
+}
+
+/* Lists for experience and certifications */
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-column {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-column h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #0a192f;
+}
+
+.skill-column p {
+  font-size: 0.9rem;
+  color: #333333;
+}
+
+/* Certification list styling */
+.cert-list {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.cert-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer styling */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0a192f;
+  color: #64ffda;
+  font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .name {
+    font-size: 2rem;
   }
-  
-  @media screen and (max-width: 767px) {
-    /* Footer styles for mobile screens */
-    footer {
-      background-color: transparent; /* Transparent background for mobile */
-      padding: 10px 0;
-      position: relative;
-      width: 100%;
-    }
+  .tagline {
+    font-size: 1rem;
   }
+  .container {
+    margin: 2rem auto;
+  }
+}
