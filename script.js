@@ -17,17 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const commandInput = document.querySelector('.command-input');
   const terminalBody = document.querySelector('.terminal-body');
 
-  // Set the copyright year dynamically
+  // Dynamically set the current year in the footer
   const yearSpan = document.getElementById('year');
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear().toString();
   }
 
-  // Command history management
+  // Command history
   const commandHistory = [];
   let historyIndex = -1;
 
-  // Virtual file system for resume content
+  // Virtual file system
   let currentDirectory = '/';
   const fileContents = {
     '/about/about.txt':
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'Agile/SDLC: Scrum, Kanban, Secure Coding Practices'
   };
 
-  // Helper: append a line to the terminal output
+  // Helper to add output lines
   function addOutputLine(content, cssClass) {
     const p = document.createElement('p');
     if (cssClass) {
@@ -81,43 +81,34 @@ document.addEventListener('DOMContentLoaded', () => {
     outputDiv.appendChild(p);
   }
 
-  // Helper: append a typed command line
+  // Helper to add a typed command line
   function addCommandLine(command) {
-    // Combine prompt and command into a single line
     const line = `<span class="prompt">$</span> ${command}`;
     addOutputLine(line, 'command-line');
   }
 
-  // Ensure output area scrolls to the bottom
+  // Scroll output to bottom
   function scrollToBottom() {
     terminalBody.scrollTop = terminalBody.scrollHeight;
   }
 
-  // Display welcome message on load
+  // Initial welcome message
   addOutputLine('Welcome to Tamanbir Singh Jaj\'s resume terminal. Type \"help\" to begin.');
   scrollToBottom();
 
-  // Handle command input
+  // Event listener for command input
   commandInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       const command = commandInput.value.trim();
-      // Do nothing if command is empty
-      if (command === '') {
-        event.preventDefault();
-        return;
+      if (command !== '') {
+        commandHistory.push(command);
+        historyIndex = commandHistory.length;
+        addCommandLine(command);
+        handleCommand(command.toLowerCase());
       }
-      // Store command in history
-      commandHistory.push(command);
-      historyIndex = commandHistory.length;
-      // Show typed command in output
-      addCommandLine(command);
-      // Process the command
-      handleCommand(command.toLowerCase());
-      // Clear input field
       commandInput.value = '';
       event.preventDefault();
     } else if (event.key === 'ArrowUp') {
-      // Navigate up in command history
       if (commandHistory.length > 0 && historyIndex > 0) {
         historyIndex--;
         commandInput.value = commandHistory[historyIndex];
@@ -126,12 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       event.preventDefault();
     } else if (event.key === 'ArrowDown') {
-      // Navigate down in command history
       if (commandHistory.length > 0 && historyIndex < commandHistory.length - 1) {
         historyIndex++;
         commandInput.value = commandHistory[historyIndex];
       } else {
-        // If at the end, clear
         commandInput.value = '';
         historyIndex = commandHistory.length;
       }
@@ -139,9 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Main command handler
+  // Command handler
   function handleCommand(command) {
-    // Built‑in commands
     switch (command) {
       case 'help':
         addOutputLine('Available commands:', 'info');
@@ -159,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentDirectory === '/') {
           addOutputLine('about\ncertifications\nexperience\neducation\nskills');
         } else {
-          // List files in the current directory
           const filesInDirectory = Object.keys(fileContents).filter((file) => file.startsWith(currentDirectory + '/'));
           if (filesInDirectory.length > 0) {
             const fileNames = filesInDirectory.map((file) => file.substring(currentDirectory.length + 1));
@@ -192,11 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open('https://tamanbir.github.io', '_blank');
         break;
       default:
-        // Handle directory navigation and file display
         if (command.startsWith('cd ')) {
           const newDir = command.substring(3).trim();
           if (newDir === '..') {
-            // Move up to root
             currentDirectory = '/';
             addOutputLine('Directory changed to /');
           } else if (
@@ -225,7 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         break;
     }
-    // Scroll to bottom after processing
     scrollToBottom();
   }
 });

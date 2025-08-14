@@ -4,73 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tamanbir Singh Jaj | eResume Terminal</title>
-    <!-- External stylesheet -->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <!-- Hero header with background image and candidate information -->
-    <header class="hero">
-      <div class="overlay"></div>
-      <div class="hero-content">
-        <h1 class="name">Tamanbir Singh Jaj</h1>
-        <p class="tagline">
-          Experienced Java developer with a strong background in microservices
-          architecture, Java/J2EE and secure application development
-        </p>
-        <div class="contact">
-          <p>
-            <span class="contact-label">Phone:</span>
-            <a href="tel:6474254733">647‑425‑4733</a>
-          </p>
-          <p>
-            <span class="contact-label">Email:</span>
-            <a href="mailto:tamanjaj@gmail.com">tamanjaj@gmail.com</a>
-          </p>
-          <p class="contact-links">
-            <a href="https://linkedin.com/in/tamanbir" target="_blank" rel="noopener"
-              >LinkedIn</a
-            >
-            <span class="separator">|</span>
-            <a href="https://github.com/Tamanbir" target="_blank" rel="noopener"
-              >GitHub</a
-            >
-            <span class="separator">|</span>
-            <a href="https://tamanbir.github.io" target="_blank" rel="noopener"
-              >Portfolio</a
-            >
-          </p>
+  <body class="terminal-page">
+    <!-- Single terminal window occupying the main portion of the page -->
+    <div class="terminal-window">
+      <div class="terminal-toolbar">
+        <span class="circle red"></span>
+        <span class="circle yellow"></span>
+        <span class="circle green"></span>
+        <span class="terminal-title">Tamanbir Singh Jaj | eResume Terminal</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-output"></div>
+        <div class="terminal-input-line">
+          <span class="prompt">$</span>
+          <input
+            type="text"
+            class="command-input"
+            autofocus
+            autocomplete="off"
+            spellcheck="false"
+          />
         </div>
       </div>
-    </header>
-    <!-- Main content: interactive terminal window -->
-    <main class="main">
-      <div class="terminal-window">
-        <div class="terminal-toolbar">
-          <span class="circle red"></span>
-          <span class="circle yellow"></span>
-          <span class="circle green"></span>
-          <span class="terminal-title">Resume Terminal</span>
-        </div>
-        <div class="terminal-body">
-          <div class="terminal-output"></div>
-          <div class="terminal-input-line">
-            <span class="prompt">$</span>
-            <input
-              type="text"
-              class="command-input"
-              autofocus
-              autocomplete="off"
-              spellcheck="false"
-            />
-          </div>
-        </div>
-      </div>
-    </main>
-    <!-- Footer with dynamic year -->
+    </div>
     <footer class="footer">
       <p>&copy; <span id="year"></span> Tamanbir Singh Jaj</p>
     </footer>
-    <!-- JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>

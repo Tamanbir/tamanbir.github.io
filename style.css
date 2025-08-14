@@ -1,14 +1,15 @@
 /*
-  Stylesheet for the interactive resume terminal.
+  Stylesheet for the terminal‑themed resume.
 
-  The design combines a vibrant hero section with a sleek terminal
-  window. A dark overlay on the header background ensures text
-  legibility. The terminal itself features window control buttons and
-  polished typography for a more refined user experience. All styles
-  are mobile‑friendly and responsive.
+  This design discards traditional page elements and focuses
+  exclusively on the terminal experience. The entire page has a dark
+  patterned background reminiscent of circuit boards, while the
+  terminal window is centered with subtle shadows and custom window
+  controls. All content is rendered using monospace fonts and
+  accent colours consistent with a command‑line environment.
 */
 
-/* Global reset and font settings */
+/* Reset and base styling */
 * {
   margin: 0;
   padding: 0;
@@ -17,87 +18,37 @@
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  background-color: #0a192f;
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
   color: #e0e0e0;
-  line-height: 1.6;
 }
 
-/* Hero header styles */
-.hero {
-  position: relative;
+/* Full page background with a subtle circuit pattern */
+.terminal-page {
   background: linear-gradient(
-      rgba(10, 25, 47, 0.8),
-      rgba(10, 25, 47, 0.8)
+      rgba(10, 25, 47, 0.85),
+      rgba(10, 25, 47, 0.85)
     ),
     url('hero_background.png') center/cover no-repeat;
-  padding: 4rem 1rem 5rem;
-  text-align: center;
-}
-
-.hero-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.name {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-}
-
-.tagline {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-  color: #64ffda;
-}
-
-.contact {
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.contact-label {
-  font-weight: 600;
-  color: #64ffda;
-  margin-right: 0.25rem;
-}
-
-.contact a {
-  color: #e0e0e0;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-.separator {
-  margin: 0 0.5rem;
-  color: #64ffda;
-}
-
-/* Terminal window styles */
-.main {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  padding: 2rem 1rem 4rem;
-  min-height: calc(100vh - 15rem);
+  min-height: 100vh;
+  padding: 2rem 1rem;
 }
 
+/* Terminal window container */
 .terminal-window {
   width: 100%;
   max-width: 800px;
   background-color: #011627;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
 
+/* Terminal toolbar with window control buttons */
 .terminal-toolbar {
   display: flex;
   align-items: center;
@@ -129,21 +80,23 @@ body {
   margin-left: auto;
   margin-right: auto;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #c5c7ff;
+  white-space: nowrap;
 }
 
+/* Terminal body styling */
 .terminal-body {
   padding: 1rem;
   height: 400px;
   overflow-y: auto;
-  font-family: 'Courier New', Courier, monospace;
   font-size: 1rem;
-  position: relative;
 }
 
+/* Output styling */
 .terminal-output {
   white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .terminal-output p {
@@ -151,7 +104,7 @@ body {
   line-height: 1.4;
 }
 
-/* Output line classes */
+/* Command line and output colours */
 .terminal-output .command-line {
   color: #64ffda;
 }
@@ -164,6 +117,7 @@ body {
   color: #e06c75;
 }
 
+/* Input line */
 .terminal-input-line {
   display: flex;
   align-items: center;
@@ -189,23 +143,15 @@ body {
   color: #586069;
 }
 
-/* Footer styling */
+/* Footer */
 .footer {
+  margin-top: 1.5rem;
   text-align: center;
-  padding: 1rem 0;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: #64ffda;
-  background-color: #0a192f;
 }
 
-/* Media queries */
 @media (max-width: 600px) {
-  .name {
-    font-size: 2rem;
-  }
-  .tagline {
-    font-size: 1rem;
-  }
   .terminal-body {
     height: 320px;
   }
