@@ -2,24 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tamanbir Singh Jaj | Professional Resume</title>
-    <!-- Link to external stylesheet -->
+    <title>Tamanbir Singh Jaj | eResume Terminal</title>
+    <!-- External stylesheet -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Header section with name, tagline and contact information -->
-    <header class="header">
-      <div class="header-content">
+    <!-- Hero header with background image and candidate information -->
+    <header class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
         <h1 class="name">Tamanbir Singh Jaj</h1>
-        <!--
-          The tagline uses an excerpt from the candidate’s profile to avoid
-          introducing unverified or speculative information. It summarises
-          their professional focus in microservices and secure application
-          development.
-        -->
-        <p class="tagline">Experienced Java developer with microservices and secure application development expertise</p>
+        <p class="tagline">
+          Experienced Java developer with a strong background in microservices
+          architecture, Java/J2EE and secure application development
+        </p>
         <div class="contact">
           <p>
             <span class="contact-label">Phone:</span>
@@ -30,205 +27,50 @@
             <a href="mailto:tamanjaj@gmail.com">tamanjaj@gmail.com</a>
           </p>
           <p class="contact-links">
-            <a href="https://linkedin.com/in/tamanbir" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://linkedin.com/in/tamanbir" target="_blank" rel="noopener"
+              >LinkedIn</a
+            >
             <span class="separator">|</span>
-            <a href="https://github.com/Tamanbir" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/Tamanbir" target="_blank" rel="noopener"
+              >GitHub</a
+            >
             <span class="separator">|</span>
-            <a href="https://tamanbir.github.io" target="_blank" rel="noopener">Portfolio</a>
+            <a href="https://tamanbir.github.io" target="_blank" rel="noopener"
+              >Portfolio</a
+            >
           </p>
         </div>
       </div>
     </header>
-    <!-- Main content containing profile, education, experience, skills and certifications -->
-    <main class="container">
-      <section id="profile">
-        <h2>Profile</h2>
-        <p>
-          Experienced Java developer with a strong background in microservices
-          architecture, Java/J2EE and secure application development. Skilled
-          in the full software development lifecycle (SDLC), from
-          requirements gathering to deployment, with proven expertise in
-          REST/gRPC APIs, cloud platforms (AWS, Azure) and application
-          security scanning. Adept at working in Agile environments,
-          integrating CI/CD pipelines and delivering high‑quality, scalable
-          and secure solutions for enterprise systems.
-        </p>
-      </section>
-      <section id="education">
-        <h2>Education</h2>
-        <div class="education-item">
-          <h3>Lambton College, Toronto, ON</h3>
-          <p class="education-degree">
-            <strong>Cloud Computing for Big Data (Post‑Graduate Diploma)</strong>
-            – Sep 2020 – Apr 2022
-          </p>
-          <p class="education-details">GPA: 3.5/4.0</p>
+    <!-- Main content: interactive terminal window -->
+    <main class="main">
+      <div class="terminal-window">
+        <div class="terminal-toolbar">
+          <span class="circle red"></span>
+          <span class="circle yellow"></span>
+          <span class="circle green"></span>
+          <span class="terminal-title">Resume Terminal</span>
         </div>
-        <div class="education-item">
-          <h3>Guru Nanak Dev University, Punjab, India</h3>
-          <p class="education-degree">
-            <strong>Master of Computer Applications</strong> – Dec 2019
-          </p>
-          <p class="education-details">CGPA: 7.22/10</p>
-        </div>
-      </section>
-      <section id="experience">
-        <h2>Work Experience</h2>
-        <!-- Commerce Dynamics role -->
-        <div class="experience-item">
-          <h3>Java Developer</h3>
-          <p class="experience-meta">
-            Commerce Dynamics, Toronto, ON | May 2022 – Present
-          </p>
-          <ul>
-            <li>
-              Design, develop and maintain microservices‑based enterprise
-              applications using Java/J2EE, Spring Boot and RESTful APIs;
-              integrate with external systems via JSON and gRPC.
-            </li>
-            <li>
-              Implement CI/CD pipelines using Jenkins, Maven and Gradle; streamline
-              deployment to AWS and Azure environments via Dockerised builds.
-            </li>
-            <li>
-              Conduct application security scans with SonarQube, Fortify and Black
-              Duck, ensuring code compliance with OWASP standards.
-            </li>
-            <li>
-              Collaborate in an Agile setting, actively participating in sprint
-              planning, grooming and retrospectives while adhering to
-              structured SDLC processes.
-            </li>
-            <li>
-              Work extensively with RDBMS/SQL (MSSQL, PostgreSQL) for database
-              design, query optimisation and stored procedure development.
-            </li>
-            <li>
-              Integrate OAuth and Okta for secure single sign‑on (SSO)
-              functionality.
-            </li>
-            <li>
-              Use Postman for API testing and JUnit for automated unit and
-              integration testing, improving test coverage by 30 percent.
-            </li>
-          </ul>
-        </div>
-        <!-- BlackBerry internship role -->
-        <div class="experience-item">
-          <h3>Software Experience Labs Student (Intern)</h3>
-          <p class="experience-meta">BlackBerry, Mississauga, ON | Jan 2022 – Apr 2022</p>
-          <ul>
-            <li>Assisted in microservices and REST API validation for enterprise security products.</li>
-            <li>
-              Developed automation scripts in PowerShell to streamline Active
-              Directory user/group management and environment setup.
-            </li>
-            <li>
-              Worked with SIEM tools (Cylance, XmCyber, Splunk, QRadar) to
-              monitor and investigate potential security threats.
-            </li>
-            <li>
-              Deployed and tested software in Docker containers for
-              cross‑platform compatibility checks.
-            </li>
-            <li>
-              Participated in application vulnerability scanning using
-              Fortify and SonarQube, reporting and remediating findings
-              according to security best practices.
-            </li>
-          </ul>
-        </div>
-        <!-- Freelance security analyst role -->
-        <div class="experience-item">
-          <h3>Freelancer – Security Analyst</h3>
-          <p class="experience-meta">
-            Clients: Ontario Health Alliance, LiveEdu, RealSearch | Jun 2016 –
-            Aug 2020
-          </p>
-          <ul>
-            <li>
-              Delivered vulnerability assessment and penetration testing (VAPT)
-              services for web, mobile and network systems.
-            </li>
-            <li>
-              Designed and implemented secure architecture recommendations for
-              applications using Java, Spring and microservices patterns.
-            </li>
-            <li>
-              Provided compliance solutions for HIPAA and PCI DSS, ensuring
-              systems met regulatory requirements.
-            </li>
-            <li>
-              Created automated security scripts in Python for scanning REST
-              endpoints and generating JSON‑based vulnerability reports.
-            </li>
-            <li>
-              Integrated findings into client SDLC pipelines, improving security
-              posture before production releases.
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-column">
-            <h4>Languages</h4>
-            <p>Java, Python, JavaScript, HTML/CSS</p>
-          </div>
-          <div class="skill-column">
-            <h4>Frameworks</h4>
-            <p>Spring Boot, JSP, Servlets, Django</p>
-          </div>
-          <div class="skill-column">
-            <h4>APIs</h4>
-            <p>REST, gRPC, JSON</p>
-          </div>
-          <div class="skill-column">
-            <h4>Testing</h4>
-            <p>JUnit, Postman, Swagger, curl</p>
-          </div>
-          <div class="skill-column">
-            <h4>Build Tools</h4>
-            <p>Maven, Gradle</p>
-          </div>
-          <div class="skill-column">
-            <h4>Databases</h4>
-            <p>MySQL, MSSQL, PostgreSQL</p>
-          </div>
-          <div class="skill-column">
-            <h4>Cloud</h4>
-            <p>AWS, Azure</p>
-          </div>
-          <div class="skill-column">
-            <h4>DevOps</h4>
-            <p>Jenkins, Docker, Git, SVN, CI/CD</p>
-          </div>
-          <div class="skill-column">
-            <h4>Security Tools</h4>
-            <p>SonarQube, Fortify, Black Duck, Acunetix, Burp Suite, OWASP ZAP,
-              Wireshark, Nessus, Nmap, Metasploit</p>
-          </div>
-          <div class="skill-column">
-            <h4>Agile/SDLC</h4>
-            <p>Scrum, Kanban, Secure Coding Practices</p>
+        <div class="terminal-body">
+          <div class="terminal-output"></div>
+          <div class="terminal-input-line">
+            <span class="prompt">$</span>
+            <input
+              type="text"
+              class="command-input"
+              autofocus
+              autocomplete="off"
+              spellcheck="false"
+            />
           </div>
         </div>
-      </section>
-      <section id="certifications">
-        <h2>Certifications</h2>
-        <ul class="cert-list">
-          <li>AWS Certified Cloud Practitioner</li>
-          <li>Certified Ethical Hacker v9 – EC‑Council</li>
-          <li>Machine Learning &amp; Deep Learning – Hewlett Packard Enterprise</li>
-        </ul>
-      </section>
+      </div>
     </main>
-    <!-- Footer with copyright information -->
+    <!-- Footer with dynamic year -->
     <footer class="footer">
       <p>&copy; <span id="year"></span> Tamanbir Singh Jaj</p>
     </footer>
-    <!-- JavaScript to populate dynamic content -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>
